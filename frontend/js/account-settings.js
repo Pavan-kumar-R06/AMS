@@ -5,7 +5,7 @@
 const API_URL =
     window.location.hostname === "localhost"
         ? "http://localhost:5000"
-        : "https://apartment-management-system-nine.vercel.app";
+        : "https://ams-git-main-pavankumar060905-8109s-projects.vercel.app/";
 
 // Logged in user
 const user = JSON.parse(localStorage.getItem("amsUser"));

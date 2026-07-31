@@ -2,7 +2,7 @@ const logoutButton = document.getElementById('logoutBtn');
     const API_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:5000"
-    : "https://apartment-management-system-nine.vercel.app";
+    : "https://ams-git-main-pavankumar060905-8109s-projects.vercel.app/";
 
 const API_BASE = `${API_URL}/api/staff`; 
 
