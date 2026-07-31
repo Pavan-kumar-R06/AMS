@@ -7,7 +7,7 @@ const API_URL =
         ? "http://localhost:5000"
         : "https://ams-git-main-pavankumar060905-8109s-projects.vercel.app";
 
-// Logged in user
+
 const user = JSON.parse(localStorage.getItem("amsUser"));
 
 if (!user) {
