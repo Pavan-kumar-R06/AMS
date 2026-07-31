@@ -1,0 +1,160 @@
+/* ========================================
+   BUTTON STYLES — BLUE-BLACK GLOW THEME
+   ======================================== */
+
+/* Base button styling */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    color: #ffffff;
+}
+
+.btn i {
+    margin-right: 6px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+/* ==========================
+   Primary Buttons (Search, Add, etc.)
+   ========================== */
+.btn-primary {
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    color: #e6f1ff;
+}
+
+.btn-primary:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   Edit Button (Blue Glow)
+   ========================== */
+.btn-edit {
+    background: transparent;
+    border: 2px solid transparent;
+    padding: 6px 10px;
+    color: #6fa8dc;
+}
+
+.btn-edit:hover {
+    border-color: #00b3ff;
+    box-shadow: 0 0 14px #00b3ff;
+    color: #00b3ff;
+    transform: translateY(-2px);
+}
+
+.btn-edit:hover i {
+    color: #00b3ff;
+}
+
+/* ==========================
+   Save Button (Green Glow)
+   ========================== */
+.btn-save {
+    background: transparent;
+    border: 2px solid transparent;
+    padding: 6px 10px;
+    color: #81c784;
+}
+
+.btn-save:hover {
+    border-color: #10b981;
+    box-shadow: 0 0 16px #10b981;
+    color: #10b981;
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
+    transform: translateY(-2px);
+}
+
+.btn-save:hover i {
+    color: #10b981;
+}
+
+/* ==========================
+   Delete Button (Red Glow)
+   ========================== */
+.btn-delete {
+    background: transparent;
+    border: 2px solid transparent;
+    padding: 6px 10px;
+    color: #e57373;
+}
+
+.btn-delete:hover {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 16px #ff4d4d;
+    color: #ff4d4d;
+    text-shadow: 0 0 8px rgba(255, 77, 77, 0.7);
+    transform: translateY(-2px);
+}
+
+.btn-delete:hover i {
+    color: #ff4d4d;
+}
+
+/* ==========================
+   Cancel / Secondary Buttons (Orange Glow)
+   ========================== */
+.btn-cancel,
+.btn-secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    color: #b0b6c3;
+}
+
+.btn-cancel:hover,
+.btn-secondary:hover {
+    border-color: #ff9f43;
+    color: #ff9f43;
+    box-shadow: 0 0 14px #ff9f43;
+    text-shadow: 0 0 8px rgba(255, 159, 67, 0.7);
+    transform: translateY(-2px);
+}
+
+.btn-cancel:hover i,
+.btn-secondary:hover i {
+    color: #ff9f43;
+}
+
+/* ==========================
+   Disabled State
+   ========================== */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ==========================
+   Sizes
+   ========================== */
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+}
+
+.btn-lg {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+}
+
+/* ==========================
+   Hover Animation for Icons
+   ========================== */
+.btn:hover i {
+    color: inherit;
+    transform: scale(1.1);
+}

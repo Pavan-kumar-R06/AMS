@@ -1,0 +1,139 @@
+/* Dashboard Styles */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 25px;
+    transition: var(--transition);
+    border-left: 4px solid var(--accent-color);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+
+
+.dashboard-card h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-card h3 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.dashboard-card .value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.dashboard-card .label {
+    color: var(--gray-dark);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+/* ===============================
+   Quick Actions — Polished Neon Look
+   =============================== */
+.quick-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.quick-action-btn {
+  position: relative;
+  width: 260px;
+  padding: 30px 20px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(10, 15, 35, 0.9), rgba(20, 25, 45, 0.95));
+  box-shadow: 0 0 0 rgba(0, 180, 255, 0);
+  color: #bcd9ff;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* Icon */
+.quick-action-btn i {
+  font-size: 2.6rem;
+  margin-bottom: 14px;
+  color: #55c2ff;
+  transition: all 0.3s ease;
+}
+
+/* Text */
+.quick-action-btn span {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #e4f1ff;
+}
+
+/* Hover Glow Effect */
+.quick-action-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 18px rgba(0, 180, 255, 0.4), inset 0 0 10px rgba(0, 180, 255, 0.2);
+  background: linear-gradient(145deg, rgba(15, 20, 40, 0.95), rgba(25, 30, 50, 0.95));
+}
+
+/* Glowing border outline (soft ring) */
+.quick-action-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 180, 255, 0.3);
+  transition: all 0.35s ease;
+}
+
+.quick-action-btn:hover::after {
+  border-color: rgba(0, 180, 255, 0.8);
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.6);
+}
+
+/* Optional: subtle pulse on hover */
+.quick-action-btn:hover i {
+  color: #00bfff;
+  animation: pulseGlow 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    filter: drop-shadow(0 0 8px #00bfff);
+  }
+  to {
+    filter: drop-shadow(0 0 16px #00bfff);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}

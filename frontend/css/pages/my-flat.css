@@ -1,0 +1,84 @@
+/* ===========================
+   My Flat Information
+=========================== */
+
+.flat-info-card,
+.parking-info {
+    background: linear-gradient(145deg, #101828, #0c1320);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0,224,255,.1);
+    box-shadow: 0 0 25px rgba(0,224,255,.05);
+}
+
+.flat-info-card h2,
+.parking-info h3{
+    color:#00e0ff;
+    margin-bottom:20px;
+}
+
+.flat-details{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.flat-detail-item{
+    padding:15px;
+    background:rgba(255,255,255,.05);
+    border-radius:10px;
+    border-left:3px solid #00e0ff;
+}
+
+.flat-detail-item .label{
+    color:#94a3b8;
+    font-size:.85rem;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
+
+.flat-detail-item .value{
+    color:#e2e8f0;
+    font-size:1.1rem;
+    font-weight:600;
+}
+
+/* Parking */
+
+.parking-slot{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:20px;
+    background:rgba(255,255,255,.05);
+    border-radius:12px;
+}
+
+.parking-slot-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#00e0ff;
+    color:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+}
+
+.parking-slot-info{
+    flex:1;
+}
+
+.slot-number{
+    color:#e2e8f0;
+    font-size:1.2rem;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.vehicle-info{
+    color:#cbd5e1;
+    line-height:1.8;
+}

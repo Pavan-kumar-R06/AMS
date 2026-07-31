@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - AMS</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/account-settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <h2><i class="fas fa-home"></i>owner  Portal</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+
+                <li>
+                    <a href="owner-dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="owner-my-flat.html" class="nav-link">
+                        <i class="fas fa-building"></i>
+                        My Flat Info
+                    </a>
+                </li>
+
+                <li>
+                    <a href="owner-my-requests.html" class="nav-link">
+                        <i class="fas fa-clipboard-list"></i>
+                        My Service Requests
+                    </a>
+                </li>
+
+                <li>
+                    <a href="owner-request-service.html" class="nav-link">
+                        <i class="fas fa-tools"></i>
+                        Request Service
+                    </a>
+                </li>
+
+                <li>
+                    <a href="account-settings.html" class="nav-link active">
+                        <i class="fas fa-user-cog"></i>
+                        Account Settings
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" id="logoutBtn" class="nav-link logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Header -->
+        <header class="header">
+
+            <h1>Account Settings</h1>
+
+            <div class="user-info">
+                <span id="welcomeMessage"></span>
+            </div>
+
+        </header>
+
+        <!-- Content -->
+        <main class="content">
+
+            <div class="settings-container">
+                <div class="settings-card">
+
+                
+                <!-- Profile Information -->
+                <div class="flat-info-card">
+
+                    <h2>
+                        <i class="fas fa-user-circle"></i>
+                        Profile Information
+                    </h2>
+
+                    <form id="profileForm">
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input
+                                type="text"
+                                id="fullName"
+                                class="form-control"
+                                placeholder="Enter Full Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                class="form-control"
+                                placeholder="Enter Email Address">
+                        </div>
+
+                        <div class="profile-actions">
+                            <button
+                                type="button"
+                                id="updateProfileBtn"
+                                class="btn btn-primary">
+
+                                <i class="fas fa-save"></i>
+                                Update Profile
+
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <!-- Change Password -->
+                <div class="service-request-form">
+
+    <h2>
+        <i class="fas fa-lock"></i>
+        Change Password
+    </h2>
+
+    <form id="passwordForm">
+
+        <div class="form-group">
+
+            <label>Current Password</label>
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="currentPassword"
+                    class="form-control">
+
+                <i
+                    class="fas fa-eye toggle-password"
+                    data-target="currentPassword">
+                </i>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>New Password</label>
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="newPassword"
+                    class="form-control">
+
+                <i
+                    class="fas fa-eye toggle-password"
+                    data-target="newPassword">
+                </i>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Confirm Password</label>
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    class="form-control">
+
+                <i
+                    class="fas fa-eye toggle-password"
+                    data-target="confirmPassword">
+                </i>
+
+            </div>
+
+        </div>
+
+        <div class="password-actions">
+
+            <button
+                type="button"
+                id="changePasswordBtn"
+                class="btn btn-primary">
+
+                <i class="fas fa-key"></i>
+                Change Password
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="js/account-settings.js"></script>
+
+
+<div id="notification" class="notification">
+    <i class="fas fa-check-circle"></i>
+    <span id="notificationText"></span>
+</div>
+</body>
+</html>

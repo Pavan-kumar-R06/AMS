@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Service Requests - AMS</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2> AMS Admin</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin-dashboard.html" class="nav-link"><i class="fas fa-tachometer-alt"></i>
+                            Dashboard</a></li>
+                    <li><a href="admin-manage-flats.html" class="nav-link"><i class="fas fa-building"></i> Manage
+                            Flats</a></li>
+                    <li><a href="admin-manage-owners.html" class="nav-link"><i class="fas fa-users"></i> Manage
+                            Owners</a></li>
+                    <li><a href="admin-manage-staff.html" class="nav-link"><i class="fas fa-user-tie"></i> Manage
+                            Staff</a></li>
+                            <li><a href="admin-manage-users.html" class="nav-link"><i class="fas fa-user-shield"></i> Manage Users</a></li>
+                    <li><a href="admin-manage-parking.html" class="nav-link"><i class="fas fa-car"></i> Manage
+                            Parking</a></li>
+                   <li><a href="#" class="active"><i class="fas fa-user-tie"></i> Service Requests</a></li>
+                    <li><a href="#" id="logoutBtn" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>Service Requests Management</h1>
+                <div class="user-info">
+                    <span id="welcomeMessage"></span>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <main class="content" id="mainContent">
+                <!-- Filters and Actions -->
+                <div class="filters-section">
+                    <div class="filter-group">
+                        <label for="statusFilter">Filter by Status:</label>
+                        <select id="statusFilter" class="form-control">
+                            <option value="">All Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Working">Working</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="staffFilter">Filter by Staff:</label>
+                        <select id="staffFilter" class="form-control">
+                            <option value="">All Staff</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <button id="refreshBtn" class="btn btn-primary">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Requests Table -->
+                <div class="table-container">
+                    <table id="requestsTable">
+                        <thead>
+                            <tr>
+                                <th>Request ID</th>
+                                <th>Owner</th>
+                                <th>Request Type</th>
+                                <th>Description</th>
+                                <th>Assigned Staff</th>
+                                <th>Status</th>
+                                <th>Request Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="requestsTableBody">
+                            <tr>
+                                <td colspan="8" class="table-loading">
+                                    <div class="spinner"></div>
+                                    <span>Loading service requests...</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Update Request Modal -->
+    <div class="modal" id="updateRequestModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Update Service Request</h2>
+                <button class="close-btn" id="closeUpdateModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="updateRequestForm">
+                    <input type="hidden" id="requestId">
+
+                    <div class="form-group">
+                        <label for="requestType">Request Type</label>
+                        <input type="text" id="requestType" class="form-control" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" class="form-control" rows="3" readonly></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignedStaff">Assign to Staff</label>
+                        <select id="assignedStaff" class="form-control">
+                            <option value="">Select Staff</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status" class="form-control" required>
+                            <option value="Pending">Pending</option>
+                            <option value="Working">Working</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="cancelUpdateBtn" class="btn btn-cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Update Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<div class="modal" id="deleteModal" style="display:none;">
+    <div class="modal-content" style="max-width:500px;">
+        <div class="modal-header"><h2>Confirm Deletion</h2></div>
+        <div class="modal-body">
+            <p>Are you sure you want to delete this flat? This action cannot be undone.</p>
+            <div class="form-actions">
+                <button type="button" id="cancelDeleteBtn" class="btn btn-cancel">Cancel</button>
+                <button type="button" id="confirmDeleteBtn" class="btn btn-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="js/manage-requests.js"></script>
+</body>
+
+</html>

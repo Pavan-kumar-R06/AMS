@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Owners - AMS</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><h2>AMS Admin</h2></div>
+    <nav class="sidebar-nav">
+        <ul>
+            <li><a href="admin-dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="admin-manage-flats.html"><i class="fas fa-building"></i> Manage Flats</a></li>
+            <li><a href="#" class="active"><i class="fas fa-users"></i> Manage Owners</a></li>
+            <li><a href="admin-manage-staff.html"><i class="fas fa-user-tie"></i> Manage Staff</a></li>
+            <li><a href="admin-manage-users.html" class="nav-link"><i class="fas fa-user-shield"></i> Manage Users</a></li>
+            <li><a href="admin-manage-parking.html"><i class="fas fa-car"></i> Manage Parking</a></li>
+             <li><a href="admin-manage-requests.html" class="nav-link"><i class="fas fa-tools"></i>
+                            Service Requests</a></li>
+            <li><a href="#" id="logoutBtn" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+
+        </ul>
+    </nav>
+</aside>
+
+<div class="main-content">
+    <div class="header">
+        <h1>Manage Owners</h1>
+        <button id="addOwnerBtn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Owner</button>
+    </div>
+
+    <div class="content">
+        <div class="table-container">
+            <table id="ownersTable">
+                <thead>
+                    <tr>
+                        <th>Owner ID</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>Flat No</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="ownersTableBody">
+                    <tr>
+                        <td colspan="7" class="loading">
+                            <div class="spinner"></div>
+                            <span>Loading owners...</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Add/Edit Owner Modal -->
+<div class="modal" id="ownerModal" style="display:none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle">Add New Owner</h2>
+        </div>
+        <div class="modal-body">
+            <form id="ownerForm">
+                <input type="hidden" id="ownerId">
+                <div class="form-group">
+                    <label for="ownerName">Full Name *</label>
+                    <input type="text" id="ownerName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactNo">Contact Number *</label>
+                    <input type="tel" id="contactNo" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="flatId">Assign Flat</label>
+                    <select id="flatId" class="form-control">
+                        <option value="">Select Flat (Optional)</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancelBtn" class="btn btn-cancel">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal" id="deleteModal" style="display:none;">
+    <div class="modal-content" style="max-width:400px;">
+        <div class="modal-header"><h2>Confirm Deletion</h2></div>
+        <div class="modal-body">
+            <p>Are you sure you want to delete this owner? This action cannot be undone.</p>
+            <div class="form-actions">
+                <button type="button" id="cancelDeleteBtn" class="btn btn-cancel">Cancel</button>
+                <button type="button" id="confirmDeleteBtn" class="btn btn-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/password-toggle.js"></script>
+<script src="js/manage-owners.js"></script>
+</body>
+</html>

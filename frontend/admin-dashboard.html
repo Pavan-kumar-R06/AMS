@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - AMS</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>AMS Admin</h2>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin-dashboard.html"  class="nav-link active"><i class="fas fa-tachometer-alt"></i>  Dashboard</a></li>
+                    <li><a href="admin-manage-flats.html" class="nav-link"><i class="fas fa-building"></i> Manage Flats</a></li>
+                    <li><a href="admin-manage-owners.html"  class="nav-link"><i class="fas fa-users"></i>  Manage Owners</a></li>
+                    <li><a href="admin-manage-staff.html"  class="nav-link"><i class="fas fa-user-tie"></i> Manage Staff</a></li>
+                    <li><a href="admin-manage-users.html" class="nav-link"><i class="fas fa-user-shield"></i> Manage Users</a></li>
+                    <li><a href="admin-manage-parking.html" class="nav-link"><i class="fas fa-car"></i> Manage Parking</a></li>
+                    <li><a href="admin-manage-requests.html" class="nav-link"><i class="fas fa-tools"></i>
+                            Service Requests</a></li>
+                    <li><a href="#" id="logoutBtn" class="nav-link logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>Admin Dashboard</h1>
+                <div class="user-info">
+                    <span id="welcomeMessage"></span>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="content" id="mainContent">
+                <!-- Overview Cards Section -->
+                <section class="overview-section">
+                    <h2>Dashboard Overview</h2>
+                    <div class="cards-container">
+                        <div class="card">
+                            <h3>Total Flats</h3>
+                            <p class="card-value" id="totalFlats">-</p>
+                        </div>
+                        <div class="card">
+                            <h3>Occupied Flats</h3>
+                            <p class="card-value" id="occupiedFlats">-</p>
+                        </div>
+                        <div class="card">
+                            <h3>Vacant Flats</h3>
+                            <p class="card-value" id="vacantFlats">-</p>
+                        </div>
+                        <div class="card">
+                            <h3>Total Staff</h3>
+                            <p class="card-value" id="totalStaff">-</p>
+                        </div>
+                        <div class="card">
+                            <h3>Active Staff</h3>
+                            <p class="card-value" id="activeStaff">-</p>
+                        </div>
+                        <div class="card">
+                            <h3>Inactive Staff</h3>
+                            <p class="card-value" id="inactiveStaff">-</p>
+                        </div>
+                        <div class="card">
+                            <h3>Total Owners</h3>
+                            <p class="card-value" id="totalOwners">-</p>
+                        </div>
+                        <div class="card">
+                            <h3>Parking Slots</h3>
+                            <p class="card-value" id="totalParkingSlots">-</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Reports Section -->
+                <section class="reports-section">
+                    <h2>Quick Reports</h2>
+
+                    <!-- Staff Workload Table -->
+                    <div class="report-card">
+                        <h3>Staff Workload</h3>
+                        <table id="staffWorkloadTable">
+                            <thead>
+                                <tr>
+                                    <th>Staff Name</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Total Requests</th>
+                                    <th>Completed</th>
+                                    <th>Pending/Working</th>
+                                </tr>
+                            </thead>
+                            <tbody id="staffWorkloadBody">
+                                <tr>
+                                    <td colspan="6">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Recent Service Requests -->
+                    <div class="report-card">
+                        <h3>Recent Service Requests</h3>
+                        <table id="recentRequestsTable">
+                            <thead>
+                                <tr>
+                                    <th>Request ID</th>
+                                    <th>Owner</th>
+                                    <th>Type</th>
+                                    <th>Assigned To</th>
+                                    <th>Status</th>
+                                    <th>Request Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentRequestsBody">
+                                <tr>
+                                    <td colspan="6">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Apartment Summary -->
+                    <div class="report-card">
+                        <h3>Apartment Summary</h3>
+                        <table id="apartmentSummaryTable">
+                            <thead>
+                                <tr>
+                                    <th>Apartment Name</th>
+                                    <th>Address</th>
+                                    <th>Total Floors</th>
+                                    <th>Total Flats</th>
+                                    <th>Occupied</th>
+                                    <th>Vacant</th>
+                                </tr>
+                            </thead>
+                            <tbody id="apartmentSummaryBody">
+                                <tr>
+                                    <td colspan="6">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+
+</html>

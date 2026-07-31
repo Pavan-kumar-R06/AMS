@@ -1,0 +1,172 @@
+/* ============================================
+   MODAL STYLES — DARK GLASS GLOW THEME
+   ============================================ */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    padding: 20px;
+    overflow-y: auto;
+    transition: opacity 0.3s ease;
+}
+
+.modal[style*="display: block"],
+.modal[style*="display: flex"] {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===========================
+   Modal Content Box
+   =========================== */
+.modal-content {
+    background: rgba(20, 30, 50, 0.9);
+    border: 1px solid rgba(0, 180, 255, 0.2);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 25px rgba(0, 180, 255, 0.25);
+    animation: modalFadeIn 0.4s ease-out;
+    color: #d8e6ff;
+}
+
+/* Fade-in animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-25px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===========================
+   Modal Header
+   =========================== */
+.modal-header {
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(20, 30, 50, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px 16px 0 0;
+    z-index: 10;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #00b3ff;
+    letter-spacing: 0.5px;
+}
+
+/* ===========================
+   Modal Body
+   =========================== */
+.modal-body {
+    padding: 25px;
+    background: rgba(25, 35, 55, 0.7);
+    border-radius: 0 0 16px 16px;
+}
+
+.modal-body p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #dce7fa;
+}
+
+.modal-body ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.modal-body ul li {
+    margin: 8px 0;
+    color: #c3d6f2;
+}
+
+/* ===========================
+   Alert Modals
+   =========================== */
+.alert-modal .modal-content {
+    max-width: 400px;
+    background: rgba(15, 25, 45, 0.95);
+    text-align: center;
+}
+
+.alert-icon {
+    font-size: 3rem;
+    margin: 25px 0 10px;
+}
+
+.alert-icon.success {
+    color: #10b981;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+}
+
+.alert-icon.error {
+    color: #ef4444;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+}
+
+.alert-icon.warning {
+    color: #facc15;
+    text-shadow: 0 0 10px rgba(250, 204, 21, 0.6);
+}
+
+.alert-message {
+    font-size: 1.1rem;
+    color: #e0e8ff;
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   Loading State
+   =========================== */
+.modal-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top-color: #00b3ff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 600px) {
+    .modal-content {
+        max-width: 90%;
+        padding: 10px;
+    }
+    .modal-header h2 {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,559 @@
+/* =========================================
+   SERVICE REQUESTS — NEON BLUE THEME
+   ========================================= */
+
+:root {
+  --primary-color: #00b3ff;
+  --accent-color: #00b3ff;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --card-bg: rgba(15, 20, 35, 0.95);
+  --dark-bg: #0a0f1f;
+  --text-light: #e6f1ff;
+  --text-muted: #aab7cc;
+  --shadow-glow: 0 0 20px rgba(0, 179, 255, 0.1);
+  --border-radius: 12px;
+}
+
+/* ==============================
+   Container
+   ============================== */
+.requests-container {
+  margin-top: 30px;
+  color: var(--text-light);
+}
+
+/* ==============================
+   Request Cards
+   ============================== */
+.request-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-glow);
+  margin-bottom: 20px;
+  padding: 22px 25px;
+  border-left: 4px solid var(--accent-color);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.request-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0, 179, 255, 0.25);
+}
+
+/* ==============================
+   Request Header
+   ============================== */
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.request-info h3 {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 1.2em;
+  text-shadow: 0 0 6px rgba(0, 179, 255, 0.3);
+}
+
+.request-id {
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+/* ==============================
+   Request Details
+   ============================== */
+.request-details {
+  margin-bottom: 15px;
+}
+
+.request-description {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.request-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+.meta-item i {
+  color: var(--accent-color);
+  width: 16px;
+  text-shadow: 0 0 5px rgba(0, 179, 255, 0.6);
+}
+
+/* ==============================
+   Request Actions
+   ============================== */
+.request-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* ==============================
+   Status Badges — Glowing Chips
+   ============================== */
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.status-badge.status-pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.status-badge.status-working {
+  background: rgba(0, 179, 255, 0.15);
+  color: #00b3ff;
+  border: 1px solid rgba(0, 179, 255, 0.4);
+}
+
+.status-badge.status-completed {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* ==============================
+   Assignment Badges
+   ============================== */
+.badge-available,
+.badge-assigned {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+.badge-available {
+  background: rgba(0, 179, 255, 0.15);
+  color: var(--accent-color);
+  border: 1px solid rgba(0, 179, 255, 0.4);
+}
+
+.badge-assigned {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success-color);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* ==============================
+   Request Card Variants
+   ============================== */
+.request-card.available {
+  border-left: 4px solid var(--accent-color);
+}
+
+.request-card.assigned-to-me {
+  border-left: 4px solid var(--success-color);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+}
+
+/* ==============================
+   No Requests Message
+   ============================== */
+.no-requests {
+  background: rgba(20, 25, 40, 0.95);
+  border-radius: var(--border-radius);
+  padding: 60px 40px;
+  text-align: center;
+  color: var(--text-muted);
+  box-shadow: var(--shadow-glow);
+}
+
+.no-requests i {
+  font-size: 48px;
+  color: var(--accent-color);
+  margin-bottom: 16px;
+  text-shadow: 0 0 10px rgba(0, 179, 255, 0.6);
+}
+
+.no-requests p:first-of-type {
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+/* ==============================
+   Request Form & Filters
+   ============================== */
+.request-form-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.form-card,
+.recent-requests,
+.filters-section,
+.update-status-form {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-glow);
+  padding: 25px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 179, 255, 0.08);
+}
+
+.form-card:hover,
+.recent-requests:hover,
+.filters-section:hover,
+.update-status-form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 179, 255, 0.2);
+}
+
+.form-card h2,
+.recent-requests h3,
+.update-status-form h2 {
+  color: var(--text-light);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 0 0 8px rgba(0, 179, 255, 0.4);
+}
+
+/* ==============================
+   Status Options (Radio Style)
+   ============================== */
+.status-options {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.status-option {
+  flex: 1;
+  min-width: 150px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-muted);
+  background: rgba(20, 25, 45, 0.8);
+}
+
+.status-option:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(0, 179, 255, 0.2);
+}
+
+.status-option.selected {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 20px rgba(0, 179, 255, 0.3);
+  color: var(--accent-color);
+}
+
+.status-option label i {
+  font-size: 2em;
+  color: inherit;
+}
+
+/* ==============================
+   Info Message
+   ============================== */
+.info-message {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(0, 179, 255, 0.08);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 8px;
+  color: var(--accent-color);
+}
+
+.info-message i {
+  font-size: 1.5em;
+}
+
+/* ==============================
+   Loading Spinner
+   ============================== */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==============================
+   Responsive Design
+   ============================== */
+@media (max-width: 768px) {
+  .request-form-container {
+    grid-template-columns: 1fr;
+  }
+  .filters-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .request-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .request-actions {
+    justify-content: stretch;
+  }
+  .request-actions .btn {
+    flex: 1;
+  }
+}
+
+/* ==============================
+   Filters Section Layout - My Requests Page
+   ============================== */
+.filters-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.filter-group label {
+  color: var(--text-light);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-refresh {
+  background: rgba(0, 179, 255, 0.15);
+  border: 1px solid rgba(0, 179, 255, 0.4);
+  color: var(--accent-color);
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.btn-refresh:hover {
+  background: rgba(0, 179, 255, 0.25);
+  box-shadow: 0 0 15px rgba(0, 179, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-refresh:active {
+  transform: translateY(0);
+}
+
+.btn-refresh i {
+  font-size: 0.9em;
+  transition: transform 0.5s ease;
+}
+
+.btn-refresh.refreshing i {
+  animation: rotate-refresh 1s linear infinite;
+}
+
+@keyframes rotate-refresh {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==============================
+   Recent Requests Section - Enhanced
+   ============================== */
+.recent-requests-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 9px;
+}
+
+.recent-requests-header h3 {
+  margin: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+
+/* Request Item Styling */
+.request-item {
+  background: rgba(20, 25, 45, 0.8);
+  border: 1px solid rgba(0, 179, 255, 0.15);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.request-item:hover {
+  background: rgba(25, 30, 50, 0.95);
+  border-color: rgba(0, 179, 255, 0.3);
+  transform: translateX(5px);
+  box-shadow: 0 0 15px rgba(0, 179, 255, 0.2);
+}
+
+.request-item:last-child {
+  margin-bottom: 0;
+}
+
+.request-item .request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.request-item .request-type {
+  font-weight: 600;
+  color: var(--text-light);
+  font-size: 1em;
+  flex: 1;
+  text-shadow: 0 0 5px rgba(0, 179, 255, 0.3);
+}
+
+.request-item .request-date {
+      margin-top: -7px;
+      margin-left: 12px;
+      color: var(--text-muted);
+      font-size: 0.85em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+}
+
+.request-item .request-date::before {
+  content: "📅";
+  font-size: 0.9em;
+}
+
+/* Status Badges in Recent Requests - Fixed & Enhanced */
+.request-item .status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 85px;
+  text-align: center;
+}
+
+/* Pending Status - Orange/Yellow */
+.request-item .status-badge.pending {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(251, 191, 36, 0.2));
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.request-item .status-badge.pending:hover {
+  border-color: #fbbf24;
+  border-width: 2px;
+}
+
+/* Working Status - Purple/Violet */
+.request-item .status-badge.working {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(168, 85, 247, 0.2));
+  color: #c084fc;
+  border: 1px solid rgba(147, 51, 234, 0.5);
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
+}
+
+.request-item .status-badge.working:hover {
+  border-color: #c084fc;
+  border-width: 2px;
+}
+
+/* Completed Status - Green */
+.request-item .status-badge.completed {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(34, 197, 94, 0.2));
+  color: #22c55e;
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.request-item .status-badge.completed:hover {
+  border-color: #22c55e;
+  border-width: 2px;
+}
+
+/* Loading State */
+#recentRequestsList .loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Empty State */
+#recentRequestsList p {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+

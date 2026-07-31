@@ -1,0 +1,103 @@
+/* Main CSS File - Imports all other CSS files */
+
+/* Base */
+@import 'base.css';
+
+/* Layout */
+@import 'layout/sidebar.css';
+@import 'layout/main-content.css';
+
+/* Components */
+@import 'components/buttons.css';
+@import 'components/forms.css';
+@import 'components/tables.css';
+@import 'components/modals.css';
+
+/* Pages */
+@import 'pages/login.css';
+@import 'pages/dashboard.css';
+@import 'pages/owner.css';
+@import 'pages/staff.css';
+@import 'pages/requests.css';
+
+/* Custom styles for specific pages can be added below */
+/* ... */
+
+
+/* ===========================
+   Toast Notifications
+=========================== */
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.toast {
+    min-width: 280px;
+    max-width: 360px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    animation: slideIn .3s ease;
+}
+
+.toast.success {
+    background: #22c55e;
+}
+
+.toast.error {
+    background: #ef4444;
+}
+
+.toast i {
+    font-size: 18px;
+}
+
+@keyframes slideIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.password-wrapper{
+    position: relative;
+}
+
+.password-wrapper input{
+    width:100%;
+    padding-right:50px;
+}
+
+.password-wrapper .toggle-password{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    color:#666;
+    font-size:18px;
+    z-index:100;
+}
+
+.password-wrapper .toggle-password:hover{
+    color:#000;
+}

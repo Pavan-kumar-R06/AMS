@@ -1,0 +1,292 @@
+/* ===============================
+   owner Dashboard — Neon Glow Edition
+   =============================== */
+
+:root {
+  --primary-color: #00b3ff;
+  --accent-color: #00b3ff;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --dark-bg: #0a0f1f;
+  --card-bg: rgba(15, 20, 35, 0.95);
+  --text-light: #e6f1ff;
+  --text-muted: #aab7cc;
+  --shadow-glow: 0 0 20px rgba(0, 179, 255, 0.15);
+  --border-radius: 12px;
+}
+
+/* Navbar */
+.owner-navbar {
+  background: linear-gradient(135deg, #0c1325, #121b2f);
+  box-shadow: 0 0 15px rgba(0, 179, 255, 0.2);
+  padding: 16px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 179, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.owner-navbar .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.owner-navbar .nav-brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(0, 179, 255, 0.6);
+}
+
+.owner-navbar .nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+}
+
+.owner-navbar .nav-menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.owner-navbar .nav-menu a:hover,
+.owner-navbar .nav-menu a.active {
+  background: rgba(0, 179, 255, 0.15);
+  color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(0, 179, 255, 0.4);
+}
+
+/* ===============================
+   Card Base Style
+   =============================== */
+.flat-info-card,
+.parking-info,
+.service-request-form {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-glow);
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 179, 255, 0.08);
+}
+
+.flat-info-card:hover,
+.parking-info:hover,
+.service-request-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0, 179, 255, 0.25);
+}
+
+/* Headings */
+.flat-info-card h2,
+.parking-info h3,
+.service-request-form h2 {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 179, 255, 0.2);
+}
+
+.flat-info-card h2 i,
+.parking-info h3 i,
+.service-request-form h2 i {
+  margin-right: 10px;
+  color: var(--accent-color);
+  font-size: 1.4rem;
+}
+
+/* ===============================
+   Flat Info Details
+   =============================== */
+.flat-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.flat-detail-item {
+  padding: 16px;
+  background: rgba(20, 30, 50, 0.9);
+  border-radius: 10px;
+  border-left: 4px solid var(--accent-color);
+  box-shadow: inset 0 0 10px rgba(0, 179, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.flat-detail-item:hover {
+  box-shadow: 0 0 12px rgba(0, 179, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.flat-detail-item .label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.flat-detail-item .value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+/* ===============================
+   Parking Info
+   =============================== */
+.parking-slot {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: rgba(20, 35, 60, 0.9);
+  border-radius: 10px;
+  border-left: 4px solid var(--success-color);
+  box-shadow: inset 0 0 10px rgba(16, 185, 129, 0.15);
+}
+
+.parking-slot-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--success-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.4rem;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+}
+
+.parking-slot-info .slot-number {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.parking-slot-info .vehicle-info {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Status badges for My Requests page - Alternative class structure */
+.status-badge.pending {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(251, 191, 36, 0.2));
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.status-badge.pending:hover {
+  border-color: #fbbf24;
+  border-width: 2px;
+}
+
+.status-badge.working {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(168, 85, 247, 0.2));
+  color: #c084fc;
+  border: 1px solid rgba(147, 51, 234, 0.5);
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.status-badge.working:hover {
+  border-color: #c084fc;
+  border-width: 2px;
+}
+
+.status-badge.completed {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(34, 197, 94, 0.2));
+  color: #22c55e;
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.status-badge.completed:hover {
+  border-color: #22c55e;
+  border-width: 2px;
+}
+
+/* ===============================
+   Form Layout
+   =============================== */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-row .form-group label {
+  color: var(--text-muted);
+}
+
+input, select, textarea {
+  background: rgba(10, 20, 40, 0.8);
+  border: 1px solid rgba(0, 179, 255, 0.2);
+  color: var(--text-light);
+  border-radius: 8px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(0, 179, 255, 0.3);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .owner-navbar .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .owner-navbar .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flat-details,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

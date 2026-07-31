@@ -1,0 +1,265 @@
+/* 🌌 Staff Dashboard - Futuristic Theme */
+.staff-navbar {
+    background: linear-gradient(135deg, #0b0f1c, #101a2b);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    padding: 15px 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+}
+
+.staff-navbar .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.staff-navbar .nav-brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #00e0ff;
+    text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);
+}
+
+.staff-navbar .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.staff-navbar .nav-menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.staff-navbar .nav-menu a:hover,
+.staff-navbar .nav-menu a.active {
+    background: rgba(0, 224, 255, 0.15);
+    color: #00e0ff;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+}
+
+/* 🌙 Staff Profile Card */
+.staff-profile-card {
+    background: linear-gradient(145deg, #101828, #0c1320);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 224, 255, 0.05);
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 224, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.staff-profile-card:hover {
+    box-shadow: 0 0 30px rgba(0, 224, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.staff-profile-card h2 {
+    color: #00e0ff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.staff-profile-card h2 i {
+    color: #00e0ff;
+    font-size: 1.4rem;
+}
+
+/* 🌐 Profile Details */
+.profile-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.profile-detail-item {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 3px solid #00e0ff;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+.profile-detail-item:hover {
+    background: rgba(0, 224, 255, 0.05);
+    transform: translateY(-3px);
+}
+
+.profile-detail-item .label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.profile-detail-item .value {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+/* ⚙️ Status Toggle */
+.status-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 224, 255, 0.1);
+}
+
+.status-toggle label {
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+.status-toggle input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    accent-color: #00e0ff;
+}
+
+/* 🛠️ Request Assignment */
+.request-assignment {
+    background: linear-gradient(145deg, #101828, #0b1220);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 224, 255, 0.05);
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 224, 255, 0.1);
+}
+
+.request-assignment h3 {
+    color: #00e0ff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Request Item */
+.request-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    border-left: 3px solid #facc15;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.request-item:hover {
+    background: rgba(0, 224, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.request-icon {
+    width: 50px;
+    height: 50px;
+    background: #facc15;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
+
+.request-info .request-title {
+    color: #e2e8f0;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.request-info .request-details {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* 🔘 Status Options */
+.status-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.status-option {
+    padding: 15px;
+    border: 2px solid rgba(0, 224, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.status-option:hover {
+    border-color: #00e0ff;
+    background: rgba(0, 224, 255, 0.08);
+    color: #00e0ff;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+}
+
+.status-option.selected {
+    border-color: #00e0ff;
+    background: rgba(0, 224, 255, 0.1);
+}
+
+/* 📊 Completion Rate */
+.completion-rate {
+    background: linear-gradient(135deg, #00e0ff, #007bff);
+    color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 0 20px rgba(0, 224, 255, 0.3);
+}
+
+.completion-rate .rate-value {
+    font-size: 3rem;
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.completion-rate .rate-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .staff-navbar .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .request-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .request-actions {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .status-options {
+        grid-template-columns: 1fr;
+    }
+}

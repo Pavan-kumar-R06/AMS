@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flat Info - AMS</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/my-flat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+<div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-home"></i> Owner Portal</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="owner-dashboard.html" class="nav-link"><i class="fas fa-tachometer-alt"></i>
+                    Dashboard</a></li>
+                <li><a href="owner-my-flat.html" class="nav-link active"><i class="fas fa-building"></i> My Flat
+                    Info</a></li>
+                <li><a href="owner-my-requests.html" class="nav-link"><i
+                        class="fas fa-clipboard-list"></i> My Service Requests</a></li>
+                <li><a href="owner-request-service.html" class="nav-link"><i class="fas fa-tools"></i> Request
+                    Service</a></li>
+                    <li> <a href="account-settings.html" class="nav-link"><i class="fas fa-user-cog"></i>
+                             Account Settings</a></li>  
+                <li><a href="#" id="logoutBtn" class="nav-link logout"><i class="fas fa-sign-out-alt"></i>
+                    Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1><i class="fas fa-building"></i> My Flat Information</h1>
+            <a href="owner-dashboard.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to
+                Dashboard</a>
+        </div>
+
+        <!-- Flat Details Card -->
+        <div class="flat-info-card">
+            <h2><i class="fas fa-home"></i> Flat Details</h2>
+            <div class="flat-details">
+                <div class="flat-detail-item">
+                    <div class="label">Flat Number</div>
+                    <div class="value">A-101</div>
+                </div>
+                <div class="flat-detail-item">
+                    <div class="label">Floor</div>
+                    <div class="value">1st Floor</div>
+                </div>
+                <div class="flat-detail-item">
+                    <div class="label">Area</div>
+                    <div class="value">1200 sqft</div>
+                </div>
+                <div class="flat-detail-item">
+                    <div class="label">Owner Name</div>
+                    <div class="value">John Doe</div>
+                </div>
+                <div class="flat-detail-item">
+                    <div class="label">Contact</div>
+                    <div class="value">+91 98765 43210</div>
+                </div>
+                <div class="flat-detail-item">
+                    <div class="label">Email</div>
+                    <div class="value">john.doe@email.com</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parking Slot Info -->
+        <div class="parking-info">
+            <h3><i class="fas fa-car"></i> Parking Slot Information</h3>
+            <div class="parking-slot">
+                <div class="parking-slot-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="parking-slot-info">
+                    <div class="slot-number">Slot P-15</div>
+                    <div class="vehicle-info">
+                        <div><strong>Vehicle Number:</strong> KA-01-AB-1234</div>
+                        <div><strong>Vehicle Type:</strong> 4 Wheeler</div>
+                        <div><strong>Status:</strong> <span class="status-badge status-active">Active</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    <script src="js/my-flat.js"></script>
+</body>
+
+</html>
