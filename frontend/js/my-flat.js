@@ -5,7 +5,7 @@ const parkingInfoContainer = document.querySelector('.parking-info');
     const API_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:5000"
-    : "https://ams-git-main-pavankumar060905-8109s-projects.vercel.app/";
+    : "https://ams-git-main-pavankumar060905-8109s-projects.vercel.app";
 
 async function loadFlatInfo() {
     try {
